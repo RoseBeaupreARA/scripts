@@ -96,6 +96,9 @@ fc-cache -f -v
 
 ## Clion keybings
 * Find usages -> F4
+* Rename -> F2
+* Increase font size -> Ctrl + Numpad+
+* Decraese font size -> Ctrl + Numpad-
 
 # USB permissions for autopilot
 ```
