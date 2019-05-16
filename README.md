@@ -100,5 +100,7 @@ fc-cache -f -v
 # USB permissions for autopilot
 sudo cp 50-usb-ara.rules /etc/udev/rules.d/
 
-# Environment variables should be set in .profile
-# Aliases should be set in .bashrc
+# Knowledge base
+
+* Environment variables should be set in .profile
+* Aliases should be set in .bashrc
