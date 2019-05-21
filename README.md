@@ -46,6 +46,18 @@ chmod +x install_sw4stm32_linux_64bits-latest.run
 rm install_sw4stm32_linux_64bits-latest.run
 echo "PATH=\"\$HOME/Ac6/SystemWorkbench:\$PATH\"" >> .profile
 ```
+# STM32CubeMX
+```
+sudo apt-get install default-jre -y
+google-chrome https://my.st.com/content/my_st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-configurators-and-code-generators/stm32cubemx.html
+read -rsp $'Download en.STM32CubeMX_v5-2-0.zip, then Press any key to continue...\n' -n1 key
+mkdir STM32CubeMXSetup
+unzip en.STM32CubeMX_v5-2-0.zip -d STM32CubeMXSetup
+STM32CubeMXSetup/SetupSTM32CubeMX-5.2.0.linux
+rm en.STM32CubeMX_v5-2-0.zip
+rm -rf STM32CubeMXSetup
+```
+
  # Awesome WM
 ```
 sudo apt-get install awesome -y
