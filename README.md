@@ -48,6 +48,13 @@ rm install_sw4stm32_linux_64bits-latest.run
 echo "PATH=\"\$HOME/Ac6/SystemWorkbench:\$PATH\"" >> .profile
 source .profile
 ```
+Debugging won't work http://www.openstm32.org/forumthread3279
+
+```
+Run->Debug Configurations->Debugger 
+There I’ve changed the GDB command from “${openstm32_compiler_path}/arm-none-eabi-gdb” to “/usr/bin/arm-none-eabi-gdb”
+```
+
 # STM32CubeMX
 ```
 sudo apt-get install default-jre -y
