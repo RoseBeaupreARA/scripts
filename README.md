@@ -37,6 +37,7 @@ wget https://download.jetbrains.com/cpp/CLion-2019.1.3.tar.gz
 sudo tar xvzf CLion-*.tar.gz -C /opt/
 rm CLion-*.tar.gz
 echo "PATH=\"/opt/clion-2019.1.3/bin:\$PATH\"" >> .profile
+source .profile
 ```
 # System workbench
 ```
@@ -45,6 +46,7 @@ chmod +x install_sw4stm32_linux_64bits-latest.run
 ./install_sw4stm32_linux_64bits-latest.run -c
 rm install_sw4stm32_linux_64bits-latest.run
 echo "PATH=\"\$HOME/Ac6/SystemWorkbench:\$PATH\"" >> .profile
+source .profile
 ```
 # STM32CubeMX
 ```
@@ -57,6 +59,7 @@ STM32CubeMXSetup/SetupSTM32CubeMX-5.2.0.linux
 rm en.STM32CubeMX_v5-2-0.zip
 rm -rf STM32CubeMXSetup
 echo "PATH=\"\$HOME/STM32CubeMX:\$PATH\"" >> .profile
+source .profile
 ```
 
  # Awesome WM
