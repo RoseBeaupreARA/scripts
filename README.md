@@ -114,6 +114,11 @@ cp Consolas.ttf ~/.fonts/
 fc-cache -f -v
 ```
 
+# Stop Linux from breaking Windows' Clock
+```
+timedatectl set-local-rtc 1
+```
+
 # CLion settings
 * Lines Sorter
 
