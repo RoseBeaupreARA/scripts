@@ -102,6 +102,11 @@ sudo apt-get install python-pip -y
 pip install crccheck
 ```
 
+# Speecrunch
+```
+sudo apt-get install speedcrunch -y
+```
+
 # Enable ctrl-backspace in console
 ```
 echo "\"\\C-H\":\"\\C-W\"" > ~/.inputrc
