@@ -285,6 +285,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "c",       function () local matcher = function (c) return awful.rules.match(c, {class = 'chrome'}) end awful.client.run_or_raise('google-chrome', matcher) end),
     awful.key({ modkey,           }, "d",       function () local matcher = function (c) return awful.rules.match(c, {class = 'GitKraken'}) end awful.client.run_or_raise('gitkraken', matcher) end),
     awful.key({ modkey,           }, "s",       function () local matcher = function (c) return awful.rules.match(c, {class = 'slack'}) end awful.client.run_or_raise('slack', matcher) end),
+    awful.key({ modkey,           }, "t",       function () local matcher = function (c) return awful.rules.match(c, {class = 'SkyControl'}) end awful.client.run_or_raise('skycontrol.sh', matcher) end),
     awful.key({ modkey            }, "r",     function () awful.screen.focused().mypromptbox:run() end, {description = "run prompt", group = "launcher"}),
     -- awful.key({ modkey            }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
     
