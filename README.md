@@ -150,6 +150,7 @@ curl -sL https://deb.nodesource.com/setup_10.x > install_node.sh
 sudo sh install_node.sh
 rm install_node.sh
 sudo apt-get install nodejs -y
+sudo apt-get install libudev-dev -y
 ```
 
 # CLion settings
