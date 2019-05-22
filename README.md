@@ -77,7 +77,11 @@ cp themes ~/.config/awesome -r
 cp rc.lua ~/.config/awesome
 ```
 To enable, click the gear before logging in
-
+## Have aliases work in AwesomeWM prompt
+```
+cp /etc/X11/xinit/xinitrc ~/.xinitrc
+echo "source ~/.bashrc" >> ~/.xinitrc
+```
 # Unclutter
 ```
 sudo apt-get install unclutter -y
@@ -151,7 +155,9 @@ sudo sh install_node.sh
 rm install_node.sh
 sudo apt-get install nodejs -y
 sudo apt-get install libudev-dev -y
+echo "alias skycontrol=\'cd ~/git/skycontrol-react; sh start.sh\'" >> ~/.bashrc
 ```
+
 
 # CLion settings
 * Lines Sorter
