@@ -131,6 +131,14 @@ fc-cache -f -v
 timedatectl set-local-rtc 1
 ```
 
+# Dev libraries for SKYMATE viewer
+```
+sudo apt-get install libx11-dev -y
+sudo apt-get install libusb-1.0.0-dev -y
+sudo apt-get install xorg-dev -y
+sudo apt-get install libglu1-mesa-dev -y
+```
+
 # CLion settings
 * Lines Sorter
 
@@ -147,5 +155,6 @@ sudo cp 50-usb-ara.rules /etc/udev/rules.d/
 ```
 
 # Knowledge base
-* Environment variables should be set in .profile
-* Aliases should be set in .bashrc
+* .profile has environment variables 
+* .bashrc has aliases
+* .initrc has remapping keybinds for the console
