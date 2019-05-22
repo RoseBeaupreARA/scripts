@@ -107,9 +107,16 @@ pip install crccheck
 sudo apt-get install speedcrunch -y
 ```
 
-# Enable ctrl-backspace in console
+# Enable ctrl-backspace, delete, arrow keys in console
 ```
-echo "\"\\C-H\":\"\\C-W\"" > ~/.inputrc
+echo "\"\\C-H\": backward-kill-word" > ~/.inputrc
+echo "\"\\e[1;5C\": forward-word" >> ~/.inputrc
+echo "\"\\e[1;5D\": backward-word" >> ~/.inputrc
+echo "\"\\e[5C\": forward-word" >> ~/.inputrc
+echo "\"\\e[5D\": backward-word" >> ~/.inputrc
+echo "\"\\e\\e[C\": forward-word" >> ~/.inputrc
+echo "\"\\e\\e[D\": backward-word" >> ~/.inputrc
+echo "\"\\e[3;5~\": kill-word" >> ~/.inputrc
 ```
 
 # Add Consolas font
