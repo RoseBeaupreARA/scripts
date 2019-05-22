@@ -155,7 +155,8 @@ sudo sh install_node.sh
 rm install_node.sh
 sudo apt-get install nodejs -y
 sudo apt-get install libudev-dev -y
-echo "alias skycontrol=\'cd ~/git/skycontrol-react; sh start.sh\'" >> ~/.bashrc
+sudo echo "cd ~/git/skycontrol-react; sh start.sh" | sudo tee -a /bin/skycontrol.sh
+sudo chmod +x /bin/skycontrol.sh
 ```
 
 
