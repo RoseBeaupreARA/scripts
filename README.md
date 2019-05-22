@@ -139,6 +139,16 @@ sudo apt-get install xorg-dev -y
 sudo apt-get install libglu1-mesa-dev -y
 ```
 
+# htop
+```
+sudo apt-get install htop -y
+```
+
+# SkyControl
+```
+sudo apt-get install npm -y
+```
+
 # CLion settings
 * Lines Sorter
 
