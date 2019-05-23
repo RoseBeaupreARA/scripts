@@ -56,15 +56,23 @@ There I’ve changed the GDB command from “${openstm32_compiler_path}/arm-none
 ```
 
 # STM32CubeMX
+The binary is 32 bits, see https://askubuntu.com/questions/133389/no-such-file-or-directory-but-the-file-exists
+```
+sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386
+```
+
 ```
 sudo apt-get install default-jre -y
 google-chrome https://my.st.com/content/my_st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-configurators-and-code-generators/stm32cubemx.html
-read -rsp $'Download en.STM32CubeMX_v5-2-0.zip, then Press any key to continue...\n' -n1 key
+read -rsp $'Download en.STM32CubeMX_v5-1-0.zip, then Press any key to continue...\n' -n1 key
 mkdir STM32CubeMXSetup
-unzip en.STM32CubeMX_v5-2-0.zip -d STM32CubeMXSetup
-STM32CubeMXSetup/SetupSTM32CubeMX-5.2.0.linux
-rm en.STM32CubeMX_v5-2-0.zip
+unzip en.STM32CubeMX_v5-1-0.zip -d STM32CubeMXSetup
+STM32CubeMXSetup/SetupSTM32CubeMX-5.1.0.linux
+rm en.STM32CubeMX_v5-1-0.zip
 rm -rf STM32CubeMXSetup
+sudo rm /bin/stm32cubemx.sh
 sudo echo "~/STM32CubeMX/STM32CubeMX" | sudo tee -a /bin/stm32cubemx.sh
 sudo chmod +x /bin/stm32cubemx.sh
 ```
