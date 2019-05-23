@@ -86,11 +86,7 @@ cp themes ~/.config/awesome -r
 cp rc.lua ~/.config/awesome
 ```
 To enable, click the gear before logging in
-## Have aliases work in AwesomeWM prompt
-```
-cp /etc/X11/xinit/xinitrc ~/.xinitrc
-echo "source ~/.bashrc" >> ~/.xinitrc
-```
+
 # Unclutter
 ```
 sudo apt-get install unclutter -y
@@ -112,7 +108,7 @@ sudo apt-get install git -y
 # Python things
 ```
 sudo apt-get install python-pip -y
-pip install crccheck
+pip install crccheck pyusb tqdm
 ```
 
 # Speecrunch
