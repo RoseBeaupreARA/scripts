@@ -65,8 +65,8 @@ unzip en.STM32CubeMX_v5-2-0.zip -d STM32CubeMXSetup
 STM32CubeMXSetup/SetupSTM32CubeMX-5.2.0.linux
 rm en.STM32CubeMX_v5-2-0.zip
 rm -rf STM32CubeMXSetup
-echo "PATH=\"\$HOME/STM32CubeMX:\$PATH\"" >> .profile
-source .profile
+sudo echo "~/STM32CubeMX/STM32CubeMX" | sudo tee -a /bin/stm32cubemx.sh
+sudo chmod +x /bin/stm32cubemx.sh
 ```
 
  # Awesome WM
