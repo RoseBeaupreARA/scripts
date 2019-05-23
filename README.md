@@ -56,6 +56,7 @@ There I’ve changed the GDB command from “${openstm32_compiler_path}/arm-none
 ```
 
 # STM32CubeMX
+Version 5.2 didn't work, 5.1 did
 The binary is 32 bits, see https://askubuntu.com/questions/133389/no-such-file-or-directory-but-the-file-exists
 ```
 sudo dpkg --add-architecture i386
