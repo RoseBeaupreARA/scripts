@@ -40,6 +40,10 @@ rm CLion-*.tar.gz
 echo "PATH=\"/opt/clion-2019.1.3/bin:\$PATH\"" >> .profile
 source .profile
 ```
+# Wireshark
+```
+sudo apt-get install wireshark -y
+```
 # System workbench
 ```
 wget http://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bits-latest.run
