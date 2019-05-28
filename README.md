@@ -101,9 +101,9 @@ sudo apt-get install awesome -y
 mkdir -p ~/.config/awesome
 cp themes ~/.config/awesome -r
 cp rc.lua ~/.config/awesome
+sudo apt-get install xclip -y
 ```
 To enable, click the gear before logging in
-
 # Unclutter
 ```
 sudo apt-get install unclutter -y
