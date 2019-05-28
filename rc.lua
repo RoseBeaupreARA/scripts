@@ -268,7 +268,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey,             }, "n",     function () awful.client.focus.byidx(-1)    end, {description = "focus previous by index", group = "client"}),
     awful.key({ modkey,             }, "o",     function () awful.screen.focus_relative( 1) end, {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, "Control"   }, "r", awesome.restart,                                 {description = "reload awesome", group = "awesome"}),
-    awful.key({                     }, "Print", function () awful.util.spawn_with_shell('scrot -u ~/screenshots/1.png; cat ~/screenshots/1.png | xclip -i -selection clipboard -target image/png') end, {description = "screenshot", group = "awesome"}),
+    awful.key({                     }, "Print", function () awful.util.spawn_with_shell('import ~/screenshot.png; cat ~/screenshot.png | xclip -i -selection clipboard -target image/png') end, {description = "screenshot", group = "awesome"}),
 
     -- awful.key({ modkey, "Shift"}, "k", function () awful.screen.focus_relative(-1) end,              {description = "focus the previous screen", group = "screen"}),
     -- awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,                                   {description = "jump to urgent client", group = "client"}),
@@ -287,8 +287,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",       function () local matcher = function (c) return awful.rules.match(c, {class = 'slack'}) end awful.client.run_or_raise('slack', matcher) end),
     awful.key({ modkey,           }, "t",       function () local matcher = function (c) return awful.rules.match(c, {class = 'SkyControl'}) end awful.client.run_or_raise('skycontrol.sh', matcher) end),
     awful.key({ modkey            }, "r",     function () awful.screen.focused().mypromptbox:run() end, {description = "run prompt", group = "launcher"}),
-    -- awful.key({ modkey            }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
-    
 
     -- -- Layout manipulation
     -- awful.key({ modkey,           }, "Tab",
@@ -336,6 +334,7 @@ clientkeys = gears.table.join(
     -- The client currently has the input focus, so it cannot be minimized, since minimized clients can't have the focus.
     awful.key({ modkey,             },  "m", function (c) c.minimized = true end),
     awful.key({ modkey, "Control", "Shift"   },  "m", function (c) c.maximized = not c.maximized c:raise() end, {description = "(un)maximize", group = "client"})
+    -- awful.key({ modkey, "Shift"}, "space",  awful.client.floating.toggle                     , {description = "toggle floating", group = "client"})
 
 
 
@@ -346,7 +345,6 @@ clientkeys = gears.table.join(
     --     end,
     --     {description = "toggle fullscreen", group = "client"}),
     -- awful.key({ modkey, "Control"   }, "c",      function (c) c:kill()                         end, {description = "close", group = "client"}),
-    -- awful.key({ modkey, "Shift"}, "space",  awful.client.floating.toggle                     , {description = "toggle floating", group = "client"}),
     -- awful.key({ modkey, "Shift"}, "Return", function (c) c:swap(awful.client.getmaster()) end, {description = "move to master", group = "client"}),
     -- awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end, {description = "toggle keep on top", group = "client"}),
     --     {description = "minimize", group = "client"}),
