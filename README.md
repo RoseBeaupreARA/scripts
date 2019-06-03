@@ -63,6 +63,12 @@ Run->Debug Configurations->Debugger
 There I’ve changed the GDB command from “${openstm32_compiler_path}/arm-none-eabi-gdb” to “/usr/bin/arm-none-eabi-gdb”
 ```
 
+# Numlockx
+```
+sudo apt-get install -y numlockx
+```
+
+
 # STM32CubeMX
 Version 5.2 didn't work, 5.1 did
 The binary is 32 bits, see https://askubuntu.com/questions/133389/no-such-file-or-directory-but-the-file-exists
