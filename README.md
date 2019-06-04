@@ -134,7 +134,7 @@ sudo apt-get install git -y
 # Python things
 ```
 sudo apt-get install python-pip -y
-pip install crccheck pyusb tqdm
+pip install crccheck pyusb tqdm pandas
 ```
 
 # Speecrunch
