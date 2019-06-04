@@ -67,6 +67,10 @@ There I’ve changed the GDB command from “${openstm32_compiler_path}/arm-none
 ```
 sudo apt-get install -y numlockx
 ```
+# lcov
+```
+sudo apt-get install -y lcov
+```
 
 
 # STM32CubeMX
