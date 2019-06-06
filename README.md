@@ -4,6 +4,10 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb
 ```
+# Wine
+```
+sudo apt-get install wine-stable -y
+```
 # Gitkraken
 ```
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
