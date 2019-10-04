@@ -139,6 +139,9 @@ source .profile
 
 echo perf things
 sudo apt-get install linux-tools-common linux-tools-generic linux-tools-`uname -r` -y
+sudo sh -c 'echo kernel.perf_event_paranoid=1 >> /etc/sysctl.d/99-perf.conf'
+sudo sh -c 'echo kernel.kptr_restrict=0 >> /etc/sysctl.d/99-perf.conf'
+sudo sh -c 'sysctl --system'
 ```
 
 Caps lock as backspace in Colemak will not work:
