@@ -136,6 +136,9 @@ sudo tar xvzf CLion-*.tar.gz -C /opt/
 rm CLion-*.tar.gz
 echo "PATH=\"/opt/clion-2019.2.3/bin:\$PATH\"" >> .profile
 source .profile
+
+echo perf things
+sudo apt-get install linux-tools-common linux-tools-generic linux-tools-`uname -r` -y
 ```
 
 Caps lock as backspace in Colemak will not work:
