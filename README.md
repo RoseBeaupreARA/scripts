@@ -1,13 +1,25 @@
 # Pull this repo
 ```
-mkdir install
-cd install
+mkdir ~/install
+cd ~/install
 sudo apt-get install git; git clone https://github.com/remibeaupreara/ubuntu-setup.git
 
 echo Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb
+
+echo openocd
+sudo apt-get install -y libtool pkg-config automake autoconf
+git clone https://git.code.sf.net/p/openocd/code openocd-code
+cd openocd-code
+./bootstrap
+./configure
+make -j24
+sudo make install
+sudo echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="3748", MODE="0666"' | sudo tee -a /etc/udev/rules.d/51-openocd.rules
+sudo udevadm control --reload-rules
+cd ~/install
 
 echo Wine
 sudo apt-get install wine-stable -y
