@@ -194,13 +194,16 @@ To enable, click the gear before logging in
 * Lines Sorter
 
 ## Clion keybings
+
+Function | Keybind
 --- | ---
-Find usages|F4
-Rename|F2
-Increase Font size|Ctrl + Numpad+
-Decraese Font size|Ctrl + Numpad-
-Reset Font Size|Ctrl + Numpad0
-Select Run/Debug Configuration|Ctrl + Shift + H
+Find usages | F4
+Rename | F2
+Increase Font size | Ctrl + Numpad+
+Decraese Font size | Ctrl + Numpad-
+Reset Font Size | Ctrl + Numpad0
+Select Run/Debug Configuration | Ctrl + Shift + H
+
 
 # Knowledge base
 * .profile has environment variables 
