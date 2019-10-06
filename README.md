@@ -202,7 +202,8 @@ Rename | F2
 Increase Font size | Ctrl + Numpad+
 Decraese Font size | Ctrl + Numpad-
 Reset Font Size | Ctrl + Numpad0
-Select Run/Debug Configuration | Ctrl + Shift + H
+Select Run/Debug Configuration | Alt + Shift + H
+Replace in Path | Ctrl + Shift + H
 
 
 # Knowledge base
