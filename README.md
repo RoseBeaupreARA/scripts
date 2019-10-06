@@ -204,6 +204,7 @@ Decraese Font size | Ctrl + Numpad-
 Reset Font Size | Ctrl + Numpad0
 Select Run/Debug Configuration | Alt + Shift + H
 Replace in Path | Ctrl + Shift + H
+Related Symbol | Ctrl + Tab
 
 
 # Knowledge base
