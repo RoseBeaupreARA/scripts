@@ -19,6 +19,7 @@ make -j24
 sudo make install
 sudo echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="3748", MODE="0666"' | sudo tee -a /etc/udev/rules.d/51-openocd.rules
 sudo udevadm control --reload-rules
+sudo udevadm trigger
 cd ~/install
 
 echo Wine
@@ -114,6 +115,7 @@ sudo echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="a12a", ATTR{idProduct}=="5760", MO
 sudo echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="a12a", ATTR{idProduct}=="5761", MODE="0666"' | sudo tee -a /etc/udev/rules.d/50-usb-ara.rules
 sudo echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="5749", MODE="0666"' | sudo tee -a /etc/udev/rules.d/50-usb-ara.rules
 sudo udevadm control --reload-rules
+sudo udevadm trigger
 
 echo SkyControl dev environment
 curl -sL https://deb.nodesource.com/setup_10.x > install_node.sh
