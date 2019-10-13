@@ -98,6 +98,7 @@ sudo apt-get install libx11-dev -y
 sudo apt-get install libusb-1.0.0-dev -y
 sudo apt-get install xorg-dev -y
 sudo apt-get install libglu1-mesa-dev -y
+sudo apt-get install freeglut3-dev -y
 
 echo htop
 sudo apt-get install htop -y
