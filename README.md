@@ -128,7 +128,7 @@ sudo echo "cd ~/git/skycontrol-react; sh start.sh" | sudo tee -a /bin/skycontrol
 sudo chmod +x /bin/skycontrol.sh
 
 echo System workbench
-wget http://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bits-latest.run
+wget http://www.ac6-tools.com/downloads/SW4STM32/install_sw4stm32_linux_64bits-latest.run --no-check-certificate
 chmod +x install_sw4stm32_linux_64bits-latest.run
 ./install_sw4stm32_linux_64bits-latest.run -c
 rm install_sw4stm32_linux_64bits-latest.run
