@@ -30,7 +30,7 @@ wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
 sudo apt-get install -f -y
 rm gitkraken-amd64.deb
-echo fs.inotify.max_user_watches=99999 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+echo fs.inotify.max_user_watches=9999999 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
 echo arm-none-eabi-gcc
 sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa -y
