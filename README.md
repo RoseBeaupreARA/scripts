@@ -22,6 +22,9 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 cd ~/install
 
+echo filezilla
+sudo apt-get install filezilla
+
 echo Wine
 sudo apt-get install wine-stable -y
 
