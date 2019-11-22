@@ -160,6 +160,10 @@ sudo apt-get install linux-tools-common linux-tools-generic linux-tools-`uname -
 sudo sh -c 'echo kernel.perf_event_paranoid=1 >> /etc/sysctl.d/99-perf.conf'
 sudo sh -c 'echo kernel.kptr_restrict=0 >> /etc/sysctl.d/99-perf.conf'
 sudo sh -c 'sysctl --system'
+
+echo octave
+sudo apt-get install octave -m
+octave --eval "pkg install -forge symbolic"
 ```
 
 Caps lock as backspace in Colemak will not work:
