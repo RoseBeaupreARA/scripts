@@ -164,6 +164,7 @@ sudo sh -c 'sysctl --system'
 echo octave
 sudo apt-get install octave -m
 octave --eval "pkg install -forge symbolic"
+code --install-extension paulosilva.vsc-octave-debugger
 ```
 
 Caps lock as backspace in Colemak will not work:
