@@ -208,24 +208,7 @@ sudo chmod +x /bin/stm32cubemx.sh
  # Awesome WM
 To enable, click the gear before logging in
 
-# CLion settings
-* Lines Sorter
-
-## Clion keybings
-
-Function | Keybind
---- | ---
-Find usages | F4
-Rename | F2
-Increase Font size | Ctrl + Numpad+
-Decraese Font size | Ctrl + Numpad-
-Reset Font Size | Ctrl + Numpad0
-Select Run/Debug Configuration | Alt + Shift + H
-Replace in Path | Ctrl + Shift + H
-Related Symbol | Ctrl + Tab
-
-
-# Knowledge base
-* .profile has environment variables 
-* .bashrc has aliases
-* .initrc has remapping keybinds for the console
+# Disable DPI scaling
+```
+echo Xft.dpi:96 > ~/.Xresources
+```
