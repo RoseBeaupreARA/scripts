@@ -1,0 +1,6 @@
+#!/bin/bash
+
+$@ > ~/csv.csv
+column -s, -t < ~/csv.csv
+rm ~/csv.csv
+
