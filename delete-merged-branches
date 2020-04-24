@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then 
+    echo Usage: delete_merged_branches master_branch
+fi
+
+echo The following branches will be deleted:
+git branch --merged| egrep -v "(^\*|$1)"
+echo Do you want to continue?
+
+read -r -p "Are you sure? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY]) 
+        git branch --merged | egrep -v "(^\*|$1)" | xargs git branch -d
+        ;;
+    *)
+        exit 1
+        ;;
+esac
