@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec netcat -ul -W1 $1
