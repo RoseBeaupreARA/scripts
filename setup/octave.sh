@@ -1,5 +1,5 @@
 #!/bin/bash
-apt-get install octave -m
+sudo apt-get install octave -y -m
 octave --eval "pkg install -forge symbolic"
 code --install-extension paulosilva.vsc-octave-debugger
 pip3 install SymPy
