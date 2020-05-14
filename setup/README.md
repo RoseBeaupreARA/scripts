@@ -1,9 +1,5 @@
 # Pull this repo
 ```
-mkdir ~/install
-cd ~/install
-sudo apt-get install git; git clone https://github.com/remibeaupreara/ubuntu-setup.git
-
 echo SkyControl dev environment
 curl -sL https://deb.nodesource.com/setup_10.x > install_node.sh
 sudo sh install_node.sh
@@ -21,8 +17,6 @@ chmod +x install_sw4stm32_linux_64bits-latest.run
 rm install_sw4stm32_linux_64bits-latest.run
 echo "PATH=\"\$HOME/Ac6/SystemWorkbench:\$PATH\"" >> .profile
 source .profile
-
-./logic.sh
 
 echo perf things
 sudo apt-get install linux-tools-common linux-tools-generic linux-tools-`uname -r` -y

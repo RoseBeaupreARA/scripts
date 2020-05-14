@@ -8,3 +8,5 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo apt update
 sudo apt install code -y
 sudo update-alternatives --set editor /usr/bin/code
+
+code --install-extension paulosilva.vsc-octave-debugger

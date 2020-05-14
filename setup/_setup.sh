@@ -9,8 +9,8 @@ fi
 # cd to setup directory
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-# allow scripts to use tools
-PATH="$PATH:`pwd`/.."
+add-if-not-in-file 'PATH="$HOME/git/scripts:$PATH"' ~/.profile
+source .profile
 
 ./32bit.sh
 ./apps.sh
@@ -23,5 +23,7 @@ PATH="$PATH:`pwd`/.."
 ./libraries.sh
 ./logic.sh
 ./python.sh
+./vscode.sh
 ./octave.sh
 ./openocd.sh
+./wireshark.sh
