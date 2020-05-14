@@ -25,12 +25,6 @@ sudo sh -c 'echo kernel.kptr_restrict=0 >> /etc/sysctl.d/99-perf.conf'
 sudo sh -c 'sysctl --system'
 ```
 
-Caps lock as backspace in Colemak will not work:
-```
-Ctrl-,
-Set "keyboard.dispatch": "keyCode"
-```
-
 # System workbench
 Debugging won't work http://www.openstm32.org/forumthread3279
 ```

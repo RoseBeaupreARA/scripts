@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "/usr/bin/python",
+    "keyboard.dispatch": "keyCode",
+    "window.zoomLevel": 2,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false
+}

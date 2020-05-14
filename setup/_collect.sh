@@ -5,3 +5,4 @@ set -euo pipefail
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 cp ~/.config/awesome ./.config/ -r
+cp ~/.config/Code/User/settings.json ./.config/Code/User/settings.json
