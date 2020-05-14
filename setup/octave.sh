@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+
 sudo apt-get install octave -y -m
 octave --eval "pkg install -forge symbolic"
 code --install-extension paulosilva.vsc-octave-debugger

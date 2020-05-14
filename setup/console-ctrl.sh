@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+
 add-if-not-in-file "\"\\C-H\": backward-kill-word" ~/.inputrc
 add-if-not-in-file "\"\\e[1;5C\": forward-word" ~/.inputrc
 add-if-not-in-file "\"\\e[1;5D\": backward-word" ~/.inputrc

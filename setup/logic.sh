@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+
 cd ~/Downloads
 wget 'http://downloads.saleae.com/logic/1.2.29/Logic+1.2.29+(64-bit).zip'
 unzip -o 'Logic+1.2.29+(64-bit).zip' -d ~ 

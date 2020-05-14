@@ -4,22 +4,6 @@ mkdir ~/install
 cd ~/install
 sudo apt-get install git; git clone https://github.com/remibeaupreara/ubuntu-setup.git
 
-./chrome.sh
-./openocd.sh
-./gitkraken.sh
-./arm-none-eabi-gcc.sh
-./vscode.sh
-./wireshark.sh
-./awesome.sh
-./32bit.sh
-./python.sh
-./ctrl-console.sh
-./consolas.sh
-./clock.sh
-./apps.sh
-./libraries.sh
-./usb-permissions.sh
-
 echo SkyControl dev environment
 curl -sL https://deb.nodesource.com/setup_10.x > install_node.sh
 sudo sh install_node.sh

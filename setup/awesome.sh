@@ -1,5 +1,6 @@
 #!/bin/bash
-echo awesome-wm
+set -euo pipefail
+
 sudo apt-get install awesome -y
 mkdir -p ~/.config/awesome
 cp ubuntu-setup/themes ~/.config/awesome -r

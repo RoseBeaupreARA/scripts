@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+
 echo USB permissions for SKYMATE devices
 sudo rm /etc/udev/rules.d/50-usb-ara.rules
 sudo echo 'SUBSYSTEM=="usb", ATTR{idVendor}=="a12a", ATTR{idProduct}=="5748", MODE="0666"' | sudo tee -a /etc/udev/rules.d/50-usb-ara.rules

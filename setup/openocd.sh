@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+
 sudo apt-get install -y libtool pkg-config automake autoconf
 git clone https://git.code.sf.net/p/openocd/code openocd-code
 cd openocd-code
