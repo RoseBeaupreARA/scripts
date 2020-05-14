@@ -1,5 +1,6 @@
 #!/bin/bash
 echo enable crtl-arrows in console
+
 echo "\"\\C-H\": backward-kill-word" > ~/.inputrc
 echo "\"\\e[1;5C\": forward-word" >> ~/.inputrc
 echo "\"\\e[1;5D\": backward-word" >> ~/.inputrc
