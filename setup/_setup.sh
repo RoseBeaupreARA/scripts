@@ -9,6 +9,8 @@ fi
 # cd to setup directory
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
+PATH="$HOME/git/scripts:$PATH"
+
 add-if-not-in-file 'PATH="$HOME/git/scripts:$PATH"' ~/.profile
 source .profile
 
