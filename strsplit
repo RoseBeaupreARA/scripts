@@ -1,0 +1,5 @@
+#!/bin/bash
+set -euo pipefail
+
+cat - | tr "$1" "\n" | head -"$2" | tail -1
+

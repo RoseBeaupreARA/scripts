@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+sudo apt-get install -y gconf-service
+sudo apt --fix-broken install -y
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
 sudo apt-get install -f -y
