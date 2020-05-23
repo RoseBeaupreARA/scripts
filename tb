@@ -7,29 +7,29 @@ else
     if [ "$1" = "i" ]
     then
         cd ~/git/boomerang
-        sh deploy/scripts/linux/ci_build_integration_tests.sh
+        deploy/scripts/linux/ci_build_integration_tests.sh
         cd ~/git/boomerang
-        sh deploy/scripts/linux/ci_run_integration_tests.sh
+        deploy/scripts/linux/ci_run_integration_tests.sh
     fi
     if [ "$1" = "r" ]
     then
         cd ~/git/boomerang
-        sh deploy/scripts/linux/ci_build_requirements_tests.sh
+        deploy/scripts/linux/ci_build_requirements_tests.sh
         cd ~/git/boomerang
-        sh deploy/scripts/linux/ci_run_requirements_tests.sh
+        deploy/scripts/linux/ci_run_requirements_tests.sh
     fi
     if [ "$1" = "u" ]
     then
         cd ~/git/boomerang
-        sh deploy/scripts/linux/ci_build_unit_tests.sh
+        deploy/scripts/linux/ci_build_unit_tests.sh
         cd ~/git/boomerang
-        sh deploy/scripts/linux/ci_run_unit_tests.sh
+        deploy/scripts/linux/ci_run_unit_tests.sh
     fi
     if [ "$1" = "c" ]
     then
         cd ~/git/boomerang
-        sh deploy/scripts/linux/ci_build_unit_tests.sh
+        deploy/scripts/linux/ci_build_unit_tests.sh
         cd ~/git/boomerang
-        sh deploy/scripts/linux/ci_run_unit_tests.sh
+        deploy/scripts/linux/ci_run_unit_tests.sh
     fi
 fi
