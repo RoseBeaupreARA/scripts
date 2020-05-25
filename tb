@@ -1,31 +1,35 @@
 #!/bin/bash
+set -euxo pipefail
 
 if [ $# -eq 0 ]
   then
-    cd ~/git/boomerang; sh jenkins.sh
+    cd ~/git/boomerang; ./jenkins.sh
 else
-    if [ "$1" = "i" ]
+    if [ "$1" = "b" ]
     then
         cd ~/git/boomerang
         deploy/scripts/linux/ci_build_integration_tests.sh
         cd ~/git/boomerang
         deploy/scripts/linux/ci_run_integration_tests.sh
     fi
-    if [ "$1" = "r" ]
+
+    if [ "$1" = "i" ]
     then
         cd ~/git/boomerang
         deploy/scripts/linux/ci_build_requirements_tests.sh
         cd ~/git/boomerang
         deploy/scripts/linux/ci_run_requirements_tests.sh
     fi
-    if [ "$1" = "u" ]
+
+    if [ "$1" = "r" ]
     then
         cd ~/git/boomerang
         deploy/scripts/linux/ci_build_unit_tests.sh
         cd ~/git/boomerang
         deploy/scripts/linux/ci_run_unit_tests.sh
     fi
-    if [ "$1" = "c" ]
+
+    if [ "$1" = "u" ]
     then
         cd ~/git/boomerang
         deploy/scripts/linux/ci_build_unit_tests.sh

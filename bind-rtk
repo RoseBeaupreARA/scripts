@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euo pipefail
+
+skypi set `skypi list | grep CfgRdc` hisMac `skypi --rtk get Physical_Addresses Local`

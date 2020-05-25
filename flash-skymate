@@ -1,0 +1,10 @@
+#!/bin/bash
+
+workers=$(expr $(cat /proc/cpuinfo | grep processor | wc -l) - 1)
+
+mkdir -p ~/git/boomerang/build
+cd ~/git/boomerang/build
+
+cmake -GNinja -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=TRUE ../
+cmake --build ./ --target SKYMATE-v3
+skypi flash ~/git/boomerang/build/platforms/skymate-v3/SKYMATE-v3.bin
