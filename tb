@@ -21,6 +21,14 @@ else
         deploy/scripts/linux/ci_run_requirements_tests.sh
     fi
 
+    if [ "$1" = "c" ]
+    then
+        cd ~/git/boomerang
+        deploy/scripts/linux/ci_build_requirements_tests.sh
+        deploy/scripts/linux/ci_build_ethernet_tests.sh
+        deploy/scripts/linux/ci_build_requirement_coverage.sh
+    fi
+
     if [ "$1" = "u" ]
     then
         cd ~/git/boomerang
