@@ -334,7 +334,8 @@ clientkeys = gears.table.join(
     awful.key({ modkey,             },  "x", function (c) c:kill() end),
     -- The client currently has the input focus, so it cannot be minimized, since minimized clients can't have the focus.
     awful.key({ modkey,             },  "m", function (c) c.minimized = true end),
-    awful.key({ modkey, "Control", "Shift"   },  "m", function (c) c.maximized = not c.maximized c:raise() end, {description = "(un)maximize", group = "client"})
+    awful.key({ modkey, "Control", "Shift"   },  "m", function (c) c.maximized = not c.maximized c:raise() end, {description = "(un)maximize", group = "client"}),
+    awful.key({ modkey,             },  "f", function (c) c.maximized = false; c.floating = false end, {description = "(un)maximize", group = "client"})
     -- awful.key({ modkey, "Shift"}, "space",  awful.client.floating.toggle                     , {description = "toggle floating", group = "client"})
 
 
@@ -544,5 +545,6 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+awful.util.spawn('xrandr --output DP-0 --rotate left --right-of DP-4 --output DP-4 --rotate normal --output DP-2 --rotate left --left-of DP-4')
 awful.util.spawn('/usr/bin/compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --unredir-if-possible')
 awful.util.spawn('numlockx on')
