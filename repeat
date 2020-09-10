@@ -1,5 +1,6 @@
 #!/bin/bash
 
 #while true; do date; bash -c $@; done
-while true; do date; $@; done
+watch -d -n0 -c $@
+
 

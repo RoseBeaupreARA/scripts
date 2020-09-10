@@ -1,6 +1,6 @@
 #!/bin/bash
 
 $@ > ~/csv.csv
-column -s, -t < ~/csv.csv
+cat ~/csv.csv | tty-table --options-borderStyle none --options-compact --options-align left --options-paddingLeft 0
 rm ~/csv.csv
 

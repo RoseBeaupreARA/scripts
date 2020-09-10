@@ -1,39 +1,38 @@
 #!/bin/bash
 set -euxo pipefail
 
+cd ~/git/boomerang
+deploy/scripts/linux/ci_build.sh
+
 if [ $# -eq 0 ]
   then
-    cd ~/git/boomerang; ./jenkins.sh
+        deploy/scripts/linux/ci_run_integration_tests.sh
+        deploy/scripts/linux/ci_run_requirements_tests.sh
+        deploy/scripts/linux/ci_run_requirement_coverage.sh
+        deploy/scripts/linux/ci_run_unit_tests.sh
 else
     if [ "$1" = "i" ]
     then
-        cd ~/git/boomerang
-        deploy/scripts/linux/ci_build_integration_tests.sh
-        cd ~/git/boomerang
         deploy/scripts/linux/ci_run_integration_tests.sh
     fi
 
     if [ "$1" = "r" ]
     then
-        cd ~/git/boomerang
-        deploy/scripts/linux/ci_build_requirements_tests.sh
-        cd ~/git/boomerang
         deploy/scripts/linux/ci_run_requirements_tests.sh
     fi
 
     if [ "$1" = "c" ]
     then
-        cd ~/git/boomerang
-        deploy/scripts/linux/ci_build_requirements_tests.sh
-        deploy/scripts/linux/ci_build_ethernet_tests.sh
-        deploy/scripts/linux/ci_build_requirement_coverage.sh
+        deploy/scripts/linux/ci_run_requirement_coverage.sh
     fi
 
     if [ "$1" = "u" ]
     then
-        cd ~/git/boomerang
-        deploy/scripts/linux/ci_build_unit_tests.sh
-        cd ~/git/boomerang
         deploy/scripts/linux/ci_run_unit_tests.sh
+    fi
+
+    if [ "$1" = "d" ]
+    then
+        deploy/scripts/linux/ci_run_skycontrol-lib_deploy_tests.sh
     fi
 fi

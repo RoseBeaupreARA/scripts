@@ -30,3 +30,4 @@ add-if-not-in-file 'PATH="$HOME/git/scripts:$PATH"' ~/.profile
 ./openocd.sh
 ./wireshark.sh
 ./usb-permissions.sh
+./csv.sh

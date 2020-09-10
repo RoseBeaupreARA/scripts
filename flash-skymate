@@ -1,11 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-workers=$(expr $(cat /proc/cpuinfo | grep processor | wc -l) - 1)
-
-mkdir -p ~/git/boomerang/build
-cd ~/git/boomerang/build
-
-cmake -GNinja -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE=TRUE ../
-cmake --build ./ --target SKYMATE-v3
-skypi flash ~/git/boomerang/build/platforms/skymate-v3/SKYMATE-v3.bin
+URL=https://dist.internal.ara-uas.com/skymate/master/alpha/latest/skymate-v3.ara
+FILE=`mktemp -d`/`basename $URL`
+wget https://dist.internal.ara-uas.com/skymate/master/alpha/latest/skymate-v3.ara -O $FILE
+skypi flash $FILE

@@ -1,0 +1,15 @@
+q#/bin/bash
+
+if [ $1 == "voltage" ]; then
+    dp821 :SOUR1:VOLT $2
+elif [ $1 == "current" ]; then
+    dp821 :SOUR1:CURR $2
+elif [ $1 == "on" ]; then
+    dp821 :OUTP CH1,ON
+elif [ $1 == "off" ]; then
+    dp821 :OUTP CH1,OFF
+elif [ $1 == "reboot" ]; then
+    dp821 off; sleep 1; dp821 on
+else
+    echo $@ | netcat 10.1.1.5 5555 -w0
+fi

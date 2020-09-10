@@ -6,6 +6,10 @@ elif [ $1 == "current" ]; then
     dl3031 :CURR $2; dl3031 on
 elif [ $1 == "on" ]; then
     dl3031 :INP:STAT 1
+elif [ $1 == "getVoltage" ]; then
+    echo :FETC:VOLT? | netcat 10.1.1.4 5555 -W1
+elif [ $1 == "getCurrent" ]; then
+    echo :FETC:CURR? | netcat 10.1.1.4 5555 -W1
 else
     echo $@ | netcat 10.1.1.4 5555 -w0
 fi
