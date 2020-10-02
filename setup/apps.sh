@@ -9,7 +9,10 @@ sudo apt-get install -y \
     htop \
     ccache \
     ninja-build \
-    cmake
+    cmake \
+    git-lfs \
+    virtualbox \
+    imagemagick
 
 sudo snap install slack --classic
 sudo snap install clion --classic --edge
