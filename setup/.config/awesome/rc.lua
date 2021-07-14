@@ -127,7 +127,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock(" %Y-%m-%d  %H:%M:%S ", 1)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -256,7 +256,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Control"   }, "n",     function () awful.client.swap.byidx( -1)    end, {description = "swap with previous client by index", group = "client"}),
     awful.key({ modkey,             }, "e",     function () awful.client.focus.byidx( 1)    end, {description = "focus next by index", group = "client"}),
     awful.key({ modkey,             }, "n",     function () awful.client.focus.byidx(-1)    end, {description = "focus previous by index", group = "client"}),
-    awful.key({ modkey,             }, "o",     function () awful.screen.focus_relative( 1) end, {description = "focus the next screen", group = "screen"}),
+    awful.key({ modkey,             }, "o",     function () awful.screen.focus_relative(1) end, {description = "focus the next screen", group = "screen"}),
+    awful.key({ modkey,             }, "F1", function () awful.util.spawn_with_shell("echo \"¯\\_(ツ)_/¯\" | xclip -selection clipboard") end, {description = "Shrug", group = "launcher"}),
+    awful.key({ modkey,             }, "F2", function () awful.util.spawn_with_shell("echo \"♪┏(・o･)┛♪┗ ( ･o･) ┓♪\" | xclip -selection clipboard") end, {description = "Shrug", group = "launcher"}),
+    awful.key({ modkey,             }, "F3", function () awful.util.spawn_with_shell("echo \"™\" | xclip -selection clipboard") end, {description = "TM", group = "launcher"}),
     awful.key({ modkey, "Control"   }, "r",     awesome.restart,                                 {description = "reload awesome", group = "awesome"}),
     awful.key({                     }, "Print", function () awful.util.spawn_with_shell('import ~/screenshot.png; cat ~/screenshot.png | xclip -i -selection clipboard -target image/png') end, {description = "screenshot", group = "awesome"}),
 
@@ -272,13 +275,14 @@ globalkeys = gears.table.join(
     awful.key({ modkey,             }, "space", function () awful.layout.inc( 1)                end,      {description = "select next", group = "layout"}),
     -- awful.key({ modkey, "Control"   }, "space", function () awful.layout.inc(-1)                end,      {description = "select previous", group = "layout"}),
     awful.key({ modkey,             }, "w",     function () mymainmenu:show() end,                          {description = "show main menu", group = "awesome"}),
-    awful.key({ modkey,             }, "c",     function () local matcher = function (c) return awful.rules.match(c, {class = 'chrome'}) end awful.client.run_or_raise('google-chrome', matcher) end),
+    awful.key({ modkey,             }, "c",     function () local matcher = function (c) return awful.rules.match(c, {class = 'Firefox'}) end awful.client.run_or_raise('firefox', matcher) end),
     awful.key({ modkey,             }, "d",     function () local matcher = function (c) return awful.rules.match(c, {class = 'GitKraken'}) end awful.client.run_or_raise('gitkraken', matcher) end),
     awful.key({ modkey,             }, "s",     function () local matcher = function (c) return awful.rules.match(c, {class = 'slack'}) end awful.client.run_or_raise('slack', matcher) end),
-    awful.key({ modkey,             }, "t",     function () local matcher = function (c) return awful.rules.match(c, {class = 'SkyControl'}) end awful.client.run_or_raise('skycontrol-beta', matcher) end),
+    awful.key({ modkey,             }, "t",     function () local matcher = function (c) return awful.rules.match(c, {class = 'SkyControl'}) end awful.client.run_or_raise('/opt/SkyControl/skycontrol', matcher) end),
     awful.key({ modkey,             }, "v",     function () local matcher = function (c) return awful.rules.match(c, {class = 'SpeedCrunch'}) end awful.client.run_or_raise('speedcrunch', matcher) end),
-    awful.key({ modkey,             }, "z",     function () local matcher = function (c) return awful.rules.match(c, {class = 'SKYMATE Viewer'}) end awful.client.run_or_raise('/home/remi/git/viewer/cmake-build-release/Viewer', matcher) end),
+    awful.key({ modkey,             }, "z",     function () local matcher = function (c) return awful.rules.match(c, {class = 'PrettyPlot'}) end awful.client.run_or_raise('prettyplot', matcher) end),
     awful.key({ modkey              }, "r",     function () awful.screen.focused().mypromptbox:run() end, {description = "run prompt", group = "launcher"}),
+    awful.key({ modkey,             }, "f",     function () awful.spawn('nautilus') end),
 
     -- -- Layout manipulation
     -- awful.key({ modkey,           }, "Tab",
@@ -321,12 +325,12 @@ globalkeys = gears.table.join(
 )
 
 clientkeys = gears.table.join(
-    awful.key({ modkey, "Control"   },  "o", function (c) c:move_to_screen()               end, {description = "move to screen", group = "client"}),
+    awful.key({ modkey, "Control"   },  "o", function (c) c:move_to_screen(c.screen.index + 1)               end, {description = "move to screen", group = "client"}),
     awful.key({ modkey,             },  "x", function (c) c:kill() end),
     -- The client currently has the input focus, so it cannot be minimized, since minimized clients can't have the focus.
     awful.key({ modkey,             },  "m", function (c) c.minimized = true end),
     awful.key({ modkey, "Control", "Shift"   },  "m", function (c) c.maximized = not c.maximized end, {description = "(un)maximize", group = "client"}),
-    awful.key({ modkey,       },  "f", function (c) c.floating = false; c.fullscreen = false end, {description = "toggle floating", group = "client"})
+    awful.key({ modkey, "Shift"              },  "f", function (c) c.floating = false; c.maximized = false; c.fullscreen = false end, {description = "toggle floating", group = "client"})
     -- awful.key({ modkey,             },  "f", function (c) c.fullscreen = not c.fullscreen c:raise() end, {description = "toggle fullscreen", group = "client"})
     -- awful.key({ modkey, "Control"   }, "c",      function (c) c:kill()                         end, {description = "close", group = "client"}),
     -- awful.key({ modkey, "Shift"}, "Return", function (c) c:swap(awful.client.getmaster()) end, {description = "move to master", group = "client"}),
