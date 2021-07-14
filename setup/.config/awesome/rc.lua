@@ -531,14 +531,14 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.spawn.easy_async_with_shell("sudo dmidecode -t 4 | grep ID | sed 's/.*ID://;s/ //g' > /tmp/id.txt", function()
-    awful.spawn.easy_async_with_shell("cat /tmp/id.txt", function(out)
-        if out == "100F8700FFFB8B17\n" then
-            awful.util.spawn('xrandr --output DP-2 --rotate normal --primary --output DP-4 --rotate left --right-of DP-2 --output DP-0 --rotate left --left-of DP-2 --output HDMI-0 --off')
-        end
-
-        mylabel.text = out
-    end)
+awful.spawn.easy_async_with_shell("cat /etc/machine-id", function(out)
+    if out == "100F8700FFFB8B17\n" then
+        awful.util.spawn('xrandr --output DP-2 --rotate normal --primary --output DP-4 --rotate left --right-of DP-2 --output DP-0 --rotate left --left-of DP-2 --output HDMI-0 --off')
+    end
+    
+    if out == "a8d4bd44bc9848b7accaa50b90704d7e\n" then
+        awful.util.spawn('xrandr --output HDMI-A-0 --rotate normal --output DVI-D-0 --rotate normal --left-of HDMI-A-0')
+    end
 end)
 
 awful.util.spawn('/usr/bin/compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --unredir-if-possible')
