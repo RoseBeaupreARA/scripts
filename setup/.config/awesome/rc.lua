@@ -531,6 +531,15 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.util.spawn('xrandr --output DP-0 --rotate left --right-of DP-4 --output DP-4 --rotate normal --output DP-2 --rotate left --left-of DP-4')
+awful.spawn.easy_async_with_shell("sudo dmidecode -t 4 | grep ID | sed 's/.*ID://;s/ //g' > /tmp/id.txt", function()
+    awful.spawn.easy_async_with_shell("cat /tmp/id.txt", function(out)
+        if out == "100F8700FFFB8B17\n" then
+            awful.util.spawn('xrandr --output DP-2 --rotate normal --primary --output DP-4 --rotate left --right-of DP-2 --output DP-0 --rotate left --left-of DP-2 --output HDMI-0 --off')
+        end
+
+        mylabel.text = out
+    end)
+end)
+
 awful.util.spawn('/usr/bin/compton --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --unredir-if-possible')
 awful.util.spawn('numlockx on')
