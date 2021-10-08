@@ -1,0 +1,5 @@
+#!/bin/bash
+
+exec ~/git/flight-server/new/analyze.sh "$@"
+
+
