@@ -31,7 +31,8 @@ sudo apt-get install -y \
     python3 \
     python3-pip \
     wireshark \
-    docker.io
+    docker.io \
+    vlc
 
 pip3 install crccheck pyusb tqdm pandas
 
@@ -112,3 +113,12 @@ Add this in ~/.inputrc
 ```
 echo Xft.dpi:96 > ~/.Xresources
 ```
+
+# Fix tearing
+* Open NVidia X Server Settings
+* in X Server Display Configuration
+* Select primary screen
+* Click Advanced...
+* Check Force Composition Pipeline
+* Click Save to X Configuration File
+* Copy content and save to /etc/X11/xorg.conf
