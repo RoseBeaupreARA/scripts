@@ -50,6 +50,10 @@ sudo apt install code -y
 sudo update-alternatives --set editor /usr/bin/code
 ```
 
+## Set VSCode as default for text files
+* `sudo nano /usr/share/applications/defaults.list`
+* Replace the `text/plain` line with `text/plain=code.desktop`
+
 # Gitkraken
 ```
 sudo apt-get install -y gconf-service gconf2
