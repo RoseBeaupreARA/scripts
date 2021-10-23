@@ -128,10 +128,21 @@ echo Xft.dpi:96 > ~/.Xresources
 * Click Save to X Configuration File
 * Copy content and save to /etc/X11/xorg.conf
 
+# Mount Rose's Jester
+Add the following in /etc/fstab: `192.168.0.10:/mnt/pool1 /mnt/share nfs defaults 0 0`
+Apply without reboot via `mount -a`
+
 # RClone 
 * Create the `b2` remote via `rclone config create backblaze-encrypted b2 account "" key ""`
-* Create de `crypt` remote via `rclone config create backblaze-decrypted crypt remote backblaze-encrypted:remi-backup-encrypted filename_encryption standard directory_name_encryption true password "" password2 ""`
+* Create the `crypt` remote via `rclone config create backblaze-decrypted crypt remote backblaze-encrypted:remi-backup-encrypted filename_encryption standard directory_name_encryption true password "" password2 ""`
 * List directories via `rclone lsd backblaze-decrypted:/`
 * List files via `rclone ls --max-depth=1 backblaze-decrypted:/Images/Ponies` 
 * Copy files via `rclone copy backblaze-decrypted:/Images/Ponies/1VZ0u.png ./`
 * Delete the remotes via `rclone config delete backblaze-encrypted` and `rclone config delete backblaze-decrypted`
+
+# Maintenance
+```
+sudo apt update
+sudo apt upgrade -y
+sudo apt autoremove --purge -y
+```
