@@ -120,7 +120,7 @@ echo Xft.dpi:96 > ~/.Xresources
 ```
 
 # Fix tearing
-* Open NVidia X Server Settings
+* `sudo nvidia-settings`
 * in X Server Display Configuration
 * Select primary screen
 * Click Advanced...
