@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euo pipefail
+
+exec ~/clion-2021.2.3/bin/clion.sh

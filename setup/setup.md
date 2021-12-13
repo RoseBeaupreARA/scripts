@@ -37,7 +37,7 @@ sudo apt-get install -y \
 
 pip3 install crccheck pyusb tqdm pandas
 
-sudo snap install clion --classic --edge
+cd ~; wget https://download.jetbrains.com/cpp/CLion-2021.2.3.tar.gz; tar -xzf CLion-*.tar.gz
 ```
 
 # VS Code
@@ -128,9 +128,37 @@ echo Xft.dpi:96 > ~/.Xresources
 * Click Save to X Configuration File
 * Copy content and save to /etc/X11/xorg.conf
 
+# Set ccache size
+`ccache -M 50G`
+
 # Mount Rose's Jester
+## NFS
 Add the following in /etc/fstab: `192.168.0.10:/mnt/pool1 /mnt/share nfs defaults 0 0`
-Apply without reboot via `mount -a`
+
+## Samba
+Install cfs utils with `sudo apt install cifs-utils -y`
+Create creds file with `nano ~/.smb`
+```
+user=[redacted]    
+password=[redacted]
+domain=WORKGROUP
+```
+
+Mount in fstab with `sudo nano /etc/fstab`, add 
+```
+//192.168.0.10/mntsmb /mnt/share cifs uid=0,credentials=/home/rose/.smb,iocharset=utf8,noperm 0 0
+```
+
+Apply without reboot via `sudo mount -a`
+
+# Spek
+```
+git clone git://github.com/alexkay/spek.git
+cd spek
+./autogen.sh
+make
+sudo make install
+```
 
 # RClone 
 * Create the `b2` remote via `rclone config create backblaze-encrypted b2 account "" key ""`
@@ -146,3 +174,33 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove --purge -y
 ```
+
+# Tasmota
+In Tasmota Console:
+```
+MqttHost 192.168.0.199
+MqttUser 0
+MqttPassword 0
+EnergyToday 0
+EnergyTotal 0
+PowerOnState 1
+TelePeriod 30
+```
+
+# Static IP
+`sudo nano /etc/netplan/01-netcfg.yaml`:
+
+```
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp5s0f0:
+      dhcp4: no 
+      addresses:
+        - 10.1.1.11/24
+    enp6s0:
+      dhcp4: yes
+```
+
+then `sudo netplan apply`
