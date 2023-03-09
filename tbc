@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euxo pipefail
+
+cd ~/git/boomerang/common-embedded-library
+deploy/scripts/linux/ci_build_unit_tests.sh
+deploy/scripts/linux/ci_run_unit_tests.sh
+deploy/scripts/linux/ci_build_unit_tests_clang.sh
+deploy/scripts/linux/ci_run_common-library-shared_deploy_tests.sh

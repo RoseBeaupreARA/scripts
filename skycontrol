@@ -1,0 +1,2 @@
+#!/bin/bash
+exec /opt/SkyControl-4/skycontrol-4 --no-sandbox
